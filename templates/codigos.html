@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recebendo Variaveis do Python</h1>
+    <p><b>Nome:</b> {{nome}}</p>
+    <p><b>Cálculo da idade:</b> Nasceu em: [{{ano_nascimento}}] e tem: {{idade}} anos</p>
+    <p><b>Você terá 50 anos em:</b> {{ano_nascimento + 50}}</p>
+
+    <h1>Filtros de texto</h1>
+    <p>Deixando o texto em maiúsculo: {{ texto|upper }}</p>
+    <p>Deixando o texto em truncado: {{ texto|truncate(5) }}</p>
+
+    <h1>Usando IF/ELIF e ELSE</h1>
+    {% if ativo == True %}
+    <p style="color: green">ATIVO</p>
+    {% elif ativo == 'erro' %}
+    <p style="color: red">ERRO</p>
+    {% else %}
+    <p style="color: yellow">INATIVO</p>
+    {% endif %}
+
+    <h1>FOR</h1>
+    {# loop.index: número da interação atual (começa em 1) #}
+    <ul>
+    {% for user in pessoas %}
+        <li>[{{loop.index}}] - {{user}}</li>
+    {% endfor %}    
+    </ul>
+</body>
+</html>
